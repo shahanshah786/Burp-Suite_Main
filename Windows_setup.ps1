@@ -1,5 +1,15 @@
 # Name is Important
 echo "
+
+
+                 #####    #     #    #####    #     #     ####   #         #   ######      #####
+               #     #   #     #   #     #   #     #   #     #  # #       #  #       #  #       #
+               #         #     #   #     #   #     #   #     #  #  #      #  #          #       #
+                #####    # ### #   # ### #   # # # #   # ### #  #    #    #    #####    # ##### #
+                     #   #     #   #     #   #     #   #     #  #     #   #          #  #       #
+               #     #   #     #   #     #   #     #   #     #  #       # #  #       #  #       #
+                #####    #     #   #     #   #     #   #     #  #         #    #####    #       #
+
                 
 "
 
@@ -10,14 +20,14 @@ $ProgressPreference = 'SilentlyContinue'
 # Check JDK-18 Availability or Download JDK-19
 $jdk18 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 19*"
 if (!($jdk18)){
-    echo "`t`tDownnloading Java JDK-19 ...."
-    wget "https://download.oracle.com/java/19/latest/jdk-19_windows-x64_bin.exe" -O jdk-19.exe    
-    echo "`n`t`tJDK-19 Downloaded, lets start the Installation process"
-    start -wait jdk-19.exe
-    rm jdk-19.exe
+    echo "`t`tDownnloading Java JDK-20 ...."
+    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.exe" -O jdk-20.exe    
+    echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
+    start -wait jdk-20.exe
+    rm jdk-20.exe
 }else{
-    echo "Required JDK-19 is Installed"
-    $jdk18
+    echo "Required JDK-20 is Installed"
+    $jdk20
 }
 
 # Check JRE-8 Availability or Download JRE-8
