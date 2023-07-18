@@ -5,7 +5,7 @@
 
 **Download Burp Loader files. Then Follow Below Steps for Activation**
 
-	--> https://github.com/SNGWN/Burp-Loader/archive/main.zip
+	--> https://github.com/shahanshah786/Burp-Loader/archive/main.zip
 
 **If using in Windows 10, Download and Install Java and JDK**
 
