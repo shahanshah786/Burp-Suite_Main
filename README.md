@@ -1,4 +1,18 @@
-##################################** Prequisites **#############################################
+##################** Prequisites **##################
+
+**Instraction Downlaods for windows**
+
+  Step: 1. Before install zip file 
+  Step: 2. Extract the zip file
+  Step: 3. Open the Window Terminal 
+  Step: 4. Follow the command 
+           $ cd Downloads
+	   $ Set-ExecutionPolicy -ExecutionPolicy bypass -Scope process
+           $ cd Burp-Suite_Main-main 
+	   $ cd Burp-Suite_Main-main 
+           $ ./Window_setup.ps1
+   Step: 5. Downloads Both JDK and JRE 
+   Step: 6. Copy The KEY and Paste in term 
 
 **Download .jar file for Burp Suite Pro from**
 	--> https://portswigger.net/burp/releases/download?product=pro&version=&type=Jar
