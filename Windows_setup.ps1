@@ -22,7 +22,7 @@ $jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'
 if (!($jdk17)){
     echo "`t`tDownnloading Java JDK-17 ...."
     wget "https://download.oracle.com/java/17/archive/jdk-17.0.7_windows-x64_bin.exe" -O jdk-17.exe    
-    echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
+    echo "`n`t`tJDK-17 Downloaded, lets start the Installation process"
     start -wait jdk-17.exe
     rm jdk-17.exe
 }else{
