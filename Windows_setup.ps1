@@ -17,30 +17,30 @@ echo "
 echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
 $ProgressPreference = 'SilentlyContinue'
 
-# Check JDK-18 Availability or Download JDK-19
+# Check JDK-17 Availability or Download JDK-19
 $jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 17*"
-if (!($jdk18)){
-    echo "`t`tDownnloading Java JDK-20 ...."
-    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.exe" -O jdk-20.exe    
+if (!($jdk17)){
+    echo "`t`tDownnloading Java JDK-17 ...."
+    wget "https://download.oracle.com/java/17/archive/jdk-17.0.7_windows-x64_bin.exe" -O jdk-17.exe    
     echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
-    start -wait jdk-20.exe
-    rm jdk-20.exe
+    start -wait jdk-17.exe
+    rm jdk-17.exe
 }else{
     echo "Required JDK-20 is Installed"
-    $jdk20
+    $jdk17
 }
 
 # Check JRE-8 Availability or Download JRE-8
-$jre17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java 17 Update *"
-if (!($jre17)){
+$jre18 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java 18 Update *"
+if (!($jre8)){
     echo "`n`t`tDownloading Java JRE ...."
-    wget "https://download.oracle.com/java/17/archive/jdk-17.0.7_windows-x64_bin.exe" -O jre-8.exe
+    wget "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248774_8c876547113c4e4aab3c868e9e0ec572" -O jre-8.exe
     echo "`n`t`tJRE-8 Downloaded, lets start the Installation process"
-    start -wait jre-17.exe
-    rm jre-17.exe
+    start -wait jre-8.exe
+    rm jre-8.exe
 }else{
     echo "`n`nRequired JRE-8 is Installed`n"
-    $jre17
+    $jre8
 }
 
 # Downloading Burp Suite Professional
