@@ -17,8 +17,8 @@ echo "
 echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
 $ProgressPreference = 'SilentlyContinue'
 
-# Check JDK-17 Availability or Download JDK-19
-$jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 17*"
+# Check JDK-17 Availability or Download JDK-20
+$jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 17*"
 if (!($jdk17)){
     echo "`t`tDownnloading Java JDK-17 ...."
     wget "https://download.oracle.com/java/17/archive/jdk-17.0.7_windows-x64_bin.exe" -O jdk-17.exe    
@@ -26,8 +26,22 @@ if (!($jdk17)){
     start -wait jdk-17.exe
     rm jdk-17.exe
 }else{
-    echo "Required JDK-20 is Installed"
+    echo "Required JDK-17 is Installed"
     $jdk17
+}
+
+
+#Cheack JDK-20 Availability or Download JDK-20
+$jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
+if (!($jdk20)){
+    echo "`t`tDownnloading Java JDK-20 ...."
+    wget "https://download.oracle.com/java/20/archive/jdk-20.0.2_windows-x64_bin.exe" -O jdk-20.exe    
+    echo "`n`t`tJDK-17 Downloaded, lets start the Installation process"
+    start -wait jdk-20.exe
+    rm jdk-20.exe
+}else{
+    echo "Required JDK-20 is Installed"
+    $jdk20
 }
 
 # Check JRE-8 Availability or Download JRE-8
